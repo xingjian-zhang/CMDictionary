@@ -75,11 +75,14 @@ class myDictionary:
                 self.db.update(operations.set(
                     'time', time.time()), self.q.word == word)
                 print(f"[green]{word}[/green] updated.")
+                return True
             else:
                 self.db.insert({"word": word, "time": time.time()})
                 print(f"[green]{word}[/green] saved.")
+                return True
         else:
-            print(f":astonished: [red]{word}[/red] seems not a English word.")
+            print(f":astonished: [red]{word}[/red] seems not a English word. Type `add {word} -f` to force to save.")
+            return False
 
     def list_words(self, time_delta, n=10):
         time_delta *= 3600

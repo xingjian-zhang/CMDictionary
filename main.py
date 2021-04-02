@@ -17,7 +17,7 @@ welcome = Panel(
         :fuelpump: Type 'help' for more details on avaliable commands.
         :computer: Visit my [link=https://github.com/xingjian-zhang]Github Page[/link]!
         """,
-    title="[red]CM[rgb(255,165,0)]D[rgb(255,255,0)]ictionary",
+    title="[rgb(250,0,0)]CM[rgb(255,165,0)]D[rgb(255,255,0)]ictionary",
     width=80
 )
 print(
@@ -105,7 +105,8 @@ Note:
 
     def do_add(self, args):
         """Add a new word to the dataset.
-Usage: add <word> [options]
+Usage: 1. add <word> [options]
+       2. <word>     [options]
 Arguments:
     word            <str> The word to be added.
 Options:
@@ -116,13 +117,13 @@ Options:
         parser.add_argument('-f', '--force', action="store_true")
         parser.add_argument('word', type=str)
         args = parser.parse_args(args)
-        d.save_word(args.word, args.force)
-        self.n += 1
-        # add prompt
+        if d.save_word(args.word, args.force):
+            self.n += 1
 
     def do_whatis(self, args):
         """Search the meaning of a word.
-Usage: whatis <word>
+Usage: 1. whatis <word>
+       2. ? <word>
 Arguments:
     word            <str> The word to be searched.
         """
@@ -152,11 +153,15 @@ Usage: clear
         if arg == "":
             print(
                 """
+Avaliable commands:
+
     ls      List recent added/updated words.
     rm      Remove a certain word.
     add     Add a new word to the dataset.
+            For simplicity, 'add' can be omitted. e.g. 'add <word>' = '<word>'.
     cr      Activate card review mode.
     whatis  Search the meaning of a word.
+            For simplicity, 'whatis' can be replaced by '?'. e.g. 'whatis <word>' = '? <word>'.
     clear   Clear the screen.
     ^C      Exit.
 
