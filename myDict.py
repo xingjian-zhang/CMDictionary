@@ -13,6 +13,7 @@ from rich import print, box
 from rich.console import Console
 from rich.table import Table
 from tinydb import Query, TinyDB, operations
+from nltk import download
 
 
 class myDictionary:
@@ -22,7 +23,11 @@ class myDictionary:
         os.makedirs("./.db/", exist_ok=True)
         self.db = TinyDB("./.db/db.json")
         self.q = Query()
-        self.words = set(words.words())
+        try:
+            self.words = set(words.words())
+        except LookupError:
+            download("words")
+            self.words = set(words.words())
         self.http = PoolManager()
         self.c = ["n.", "v.", "adj.", "adv.",
                   "prep.", "conj.", "interj.", "vt.", "vi."]
