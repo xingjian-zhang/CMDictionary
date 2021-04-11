@@ -1,7 +1,5 @@
 # CMDictionary
 
-_Author: Xingjian Zhang_
-
 This is a **light**, **cute** and **convenient** commandline-like dictionary that helps you to memorize words.
 
 ![demo_help](asset/demo_help.jpg)
