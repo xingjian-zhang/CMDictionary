@@ -1,8 +1,17 @@
 # CMDictionary
 
-This is a **light**, **cute** and **convenient** commandline dictionary that helps you focus on memorizing words.
+This is a **light**, **pure** and **convenient** commandline dictionary that helps you focus on memorizing words.
 
+## Features
+
+### Detailed Help Information
 ![demo_help](asset/demo_help.jpg)
+
+### Detailed Explanations and Examples
+![demo_query](asset/demo_query.jpg)
+
+### Track Your Recently-Memorized Words
+![demo_list](asset/demo_list.jpg)
 
 ## Note
 
@@ -25,3 +34,5 @@ python -u main.py
 ## TODO List
 - [x] Add cache to reduce requests.
 - [ ] Add args to toggle emoji output.
+- [ ] Add vocabulary auto-completion support.
+- [ ] Release python module.
