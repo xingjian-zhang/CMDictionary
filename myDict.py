@@ -33,6 +33,16 @@ class myDictionary:
                   "prep.", "conj.", "interj.", "vt.", "vi."]
 
     def get_meaning(self, word):
+        # reuse if saved in dataset
+        try:
+            word_info = self.db.search(self.q.word == word)[0]
+            if "meaning" in word_info:
+                print(Panel(word_info["meaning"],
+                            title=f"[red]{word}", title_align="left", height=20))
+                return
+        except IndexError:
+            pass
+
         api_url = "http://apii.dict.cn/mini.php?q="
         response = self.http.request('GET', api_url + word.strip())
         soup = BeautifulSoup(response.data, features="html.parser")
@@ -64,6 +74,8 @@ class myDictionary:
                 sentence = re.sub(r'([!\?\.])', r'\1\n', sentence, count=1)
                 print_string += sentence
         print_string += "\n" * 20
+        self.db.update(operations.set(
+            'meaning', print_string), self.q.word == word)
         print(Panel(print_string,
                     title=f"[red]{word}", title_align="left", height=20))
 
@@ -81,7 +93,8 @@ class myDictionary:
                 print(f"[green]{word}[/green] saved.")
                 return True
         else:
-            print(f":astonished: [red]{word}[/red] seems not a English word. Type `add {word} -f` to force to save.")
+            print(
+                f":astonished: [red]{word}[/red] seems not a English word. Type `add {word} -f` to force to save.")
             return False
 
     def list_words(self, time_delta, n=10):

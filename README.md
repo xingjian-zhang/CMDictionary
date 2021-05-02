@@ -23,5 +23,5 @@ python -u main.py
 ```
 
 ## TODO List
-- [ ] Add cache to reduce requests.
-- [ ] Add command to toggle emoji output.
+- [x] Add cache to reduce requests.
+- [ ] Add args to toggle emoji output.
