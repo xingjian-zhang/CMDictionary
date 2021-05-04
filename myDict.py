@@ -7,13 +7,11 @@ from bs4 import BeautifulSoup
 from urllib3 import PoolManager
 
 import arrow
-from nltk.corpus import words
 from rich.panel import Panel
 from rich import print, box
 from rich.console import Console
 from rich.table import Table
 from tinydb import Query, TinyDB, operations
-from nltk import download
 
 
 class myDictionary:
@@ -23,15 +21,16 @@ class myDictionary:
         os.makedirs("./.db/", exist_ok=True)
         self.db = TinyDB("./.db/db.json")
         self.q = Query()
-        try:
-            self.words = set(words.words())
-        except LookupError:
-            download("words")
-            self.words = set(words.words())
+        self.load_words()  # FIXME: trim \n
         self.http = PoolManager()
         self.c = ["n.", "v.", "adj.", "adv.",
                   "prep.", "conj.", "interj.", "vt.", "vi."]
 
+    def load_words(self):
+        self.words = set()
+        with open(".db/words.txt") as fp:
+            for word in fp.readlines():
+                self.words.add(word.strip())
     def get_meaning(self, word):
         # reuse if saved in dataset
         try:

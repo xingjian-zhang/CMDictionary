@@ -178,6 +178,10 @@ Avaliable commands:
         # print(f":astonished: Not supported command: [red]{arg}")
         self.do_add(arg)
 
+    def completenames(self, text, *ignored):
+        len_text = len(text)
+        return [a for a in d.words if a.startswith(text)][:10]
+
 
 shell = DictShell()
 shell.cmdloop()

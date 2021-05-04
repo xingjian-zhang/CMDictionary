@@ -13,6 +13,10 @@ This is a **light**, **pure** and **convenient** commandline dictionary that hel
 ### Track Your Recently-Memorized Words
 ![demo_list](asset/demo_list.jpg)
 
+### Auto-Completion 
+![demo_auto](asset/demo_auto.jpg)
+**Note**: The suggestions are ranked by word frequencies.
+
 ## Note
 
 1. You need to use [Windows Terminal](https://github.com/microsoft/terminal) to see the emojis.
@@ -34,5 +38,5 @@ python -u main.py
 ## TODO List
 - [x] Add cache to reduce requests.
 - [ ] Add args to toggle emoji output.
-- [ ] Add vocabulary auto-completion support.
+- [x] Add vocabulary auto-completion support.
 - [ ] Release python module.
