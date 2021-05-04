@@ -23,6 +23,10 @@ This is a **light**, **pure** and **convenient** commandline dictionary that hel
 2. The program will download a set of words from NLTK if your path does not contain it. This may takes a few seconds.
 3. You need internet connection to get the meanings of words.
 
+## OS
+1. Linux
+2. Windows (Not tested yet)
+3. MacOS (Not tested yet)
 ## Install Dependency
 
 ```
