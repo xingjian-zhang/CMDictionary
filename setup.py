@@ -1,7 +1,7 @@
 from setuptools import setup
 
 NAME = 'cmdict'
-VERSION = '1.0'
+VERSION = '0.2'
 REQUIRES = [
     "arrow>=1.0.3",
     "beautifulsoup4>=4.9.3",
@@ -24,10 +24,18 @@ REQUIRES = [
     "urllib3>=1.26.4"
 ]
 DATA = {"cmdict": ["data/*.txt"]}
+AUTHOR = "xingjian-zhang"
+AUTHOR_EMAIL = "jimmyzxj@umich.edu"
+URL = "https://github.com/xingjian-zhang/CMDictionary"
+DESCRIPTION = "A light, pure and convenient commandline dictionary that helps you focus on memorizing words."
 
 setup(name=NAME,
       version=VERSION,
       packages=["cmdict"],
       install_requires=REQUIRES,
-      package_data=DATA
+      package_data=DATA,
+      author=AUTHOR,
+      author_email=AUTHOR_EMAIL,
+      url=URL,
+      description=DESCRIPTION
       )
