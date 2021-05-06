@@ -1,0 +1,1 @@
+from cmdict import myDict

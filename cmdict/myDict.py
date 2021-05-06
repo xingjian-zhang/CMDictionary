@@ -16,21 +16,25 @@ from tinydb import Query, TinyDB, operations
 
 class myDictionary:
     def __init__(self, width=50):
+        self.dir, _ = os.path.split(__file__)
         self.console = Console()
         self.width = width
-        os.makedirs("./.db/", exist_ok=True)
-        self.db = TinyDB("./.db/db.json")
+        self.data_dir = os.path.join(self.dir, ".db")
+        os.makedirs(self.data_dir, exist_ok=True)
+        self.db = TinyDB(os.path.join(self.data_dir, "db.json"))
         self.q = Query()
-        self.load_words()  # FIXME: trim \n
+        self.load_words()
         self.http = PoolManager()
         self.c = ["n.", "v.", "adj.", "adv.",
                   "prep.", "conj.", "interj.", "vt.", "vi."]
 
     def load_words(self):
         self.words = set()
-        with open(".db/words.txt") as fp:
+        words_file = os.path.join(self.dir, "data", "words.txt")
+        with open(words_file) as fp:
             for word in fp.readlines():
                 self.words.add(word.strip())
+
     def get_meaning(self, word):
         # reuse if saved in dataset
         try:

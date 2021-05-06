@@ -5,7 +5,7 @@ from rich import print
 from rich.emoji import Emoji
 from rich.panel import Panel
 
-from myDict import myDictionary
+from cmdict.myDict import myDictionary
 
 print("Starting...")
 d = myDictionary()
