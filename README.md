@@ -19,15 +19,14 @@ This is a **light**, **pure** and **convenient** commandline dictionary that hel
 
 ## Note
 
-1. You need to use [Windows Terminal](https://github.com/microsoft/terminal) to see the emojis.
-2. The program will download a set of words from NLTK if your path does not contain it. This may takes a few seconds.
-3. You need internet connection to get the meanings of words.
+1. You may need to use [Windows Terminal](https://github.com/microsoft/terminal) to see the emojis.
+2. You need internet connection to get the meanings of words at the first time.
 
 ## OS
 1. Linux
 2. Windows
 3. MacOS (Not tested yet)
-## Install Dependency
+## Install
 
 ```
 python setup.py install
