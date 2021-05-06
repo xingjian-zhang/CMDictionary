@@ -30,17 +30,17 @@ This is a **light**, **pure** and **convenient** commandline dictionary that hel
 ## Install Dependency
 
 ```
-pip install -r requirements.txt
+python setup.py install
 ```
 
 ## Run
 
 ```
-python -u main.py
+python -m cmdict
 ```
 
 ## TODO List
 - [x] Add cache to reduce requests.
 - [ ] Add args to toggle emoji output.
 - [x] Add vocabulary auto-completion support.
-- [ ] Release python module.
+- [x] Release python module.
