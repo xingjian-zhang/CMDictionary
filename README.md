@@ -13,9 +13,9 @@ This is a **light**, **pure** and **convenient** commandline dictionary that hel
 ### Track Your Recently-Memorized Words
 ![demo_list](asset/demo_list.jpg)
 
-### Auto-Completion 
+### Auto-Completion (Experiment)
 ![demo_auto](asset/demo_auto.jpg)
-**Note**: The suggestions are ranked by word frequencies.
+**Note**: The suggestions are ranked by word frequencies. Unfortunately, windows system is not compatible with python `tab` completion. See details [here](https://stackoverflow.com/questions/1081405/python-tab-completion-in-windows).
 
 ## Note
 
@@ -25,7 +25,7 @@ This is a **light**, **pure** and **convenient** commandline dictionary that hel
 
 ## OS
 1. Linux
-2. Windows (Not tested yet)
+2. Windows
 3. MacOS (Not tested yet)
 ## Install Dependency
 

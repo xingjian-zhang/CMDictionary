@@ -30,8 +30,8 @@ d = myDictionary()
 class DictShell(cmd.Cmd):
     prompt = "📚 "
 
-    def __init__(self):
-        cmd.Cmd.__init__(self)
+    def __init__(self, **kwargs):
+        cmd.Cmd.__init__(self, **kwargs)
         self.n = 0
 
     def do_ls(self, args):
@@ -179,7 +179,6 @@ Avaliable commands:
         self.do_add(arg)
 
     def completenames(self, text, *ignored):
-        len_text = len(text)
         return [a for a in d.words if a.startswith(text)][:10]
 
 
