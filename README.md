@@ -1,6 +1,6 @@
 # CMDictionary
 
-This is a **light**, **pure** and **convenient** commandline dictionary that helps you focus on memorizing words.
+A **light**, **pure** and **convenient** commandline dictionary that helps you focus on memorizing words.
 
 ## Features
 
