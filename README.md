@@ -45,3 +45,4 @@ python -m cmdict
 - [ ] Add args to toggle emoji output.
 - [x] Add vocabulary auto-completion support.
 - [x] Release python module.
+- [ ] Give a prompt to enforce saving OOV words. e.g. `xxxxx seems not an English word. Do you want to save xxxxx ? y/[n]`
