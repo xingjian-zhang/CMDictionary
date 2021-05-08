@@ -40,6 +40,9 @@ python setup.py install
 python -m cmdict
 ```
 
+## Customize Your Vocab List
+Just replace `cmdict/data/words.txt` with your own vocab list. The default one is [derekchuank/high-frequency-vocabulary](https://github.com/derekchuank/high-frequency-vocabulary/blob/master/20k.txt)
+
 ## TODO List
 - [x] Add cache to reduce requests.
 - [ ] Add args to toggle emoji output.
