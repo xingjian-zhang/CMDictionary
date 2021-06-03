@@ -25,7 +25,7 @@ A **light**, **pure** and **convenient** commandline dictionary that helps you f
 ## OS
 1. Linux
 2. Windows
-3. MacOS (Not tested yet)
+3. MacOS
 ## Install
 
 ```
