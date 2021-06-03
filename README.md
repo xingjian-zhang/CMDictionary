@@ -32,7 +32,7 @@ A **light**, **pure** and **convenient** commandline dictionary that helps you f
 python setup.py install
 ```
 
-**Note**: Do not use `pip install cmdict` because there is a package called `cmdict` written by others in the pip repo. By doing this you will download the wrong package. I am still looking for workaround for this.
+**Note**: Do **NOT** use `pip install cmdict` because there is a package called `cmdict` written by others in the pip repo. By doing this you will download the wrong package. I am still looking for workaround for this.
 
 ## Run
 
